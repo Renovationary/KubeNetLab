@@ -108,8 +108,14 @@ namespace Globomantics.Api.Extenstions
         }
         private DiscoveryDocumentResponse GetDiscoveryDocument()
         {
-            var client = new HttpClient();
             var authority = _config.GetValue<string>("AuthN:Authority");
+
+            var handler = new HttpClientHandler
+            {
+                ServerCertificateCustomValidationCallback = (message, cert, chain, sslPolicyErrors) => true
+            };
+
+            var client = new HttpClient(handler);
             var disco = client.GetDiscoveryDocumentAsync(authority).GetAwaiter().GetResult();
 
             if (disco.IsError || string.IsNullOrEmpty(disco.AuthorizeEndpoint) || string.IsNullOrEmpty(disco.TokenEndpoint))
@@ -119,6 +125,7 @@ namespace Globomantics.Api.Extenstions
 
             return disco;
         }
+
 
     }
 }
