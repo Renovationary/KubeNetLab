@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <UserSecretsId>d6141523-fe56-4f26-8cc1-3d16f9a34de8</UserSecretsId>
+    <UserSecretsId>84e0b4b7-930c-48fc-8118-4709f42f962c</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
 
@@ -21,19 +21,13 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Http.Polly" Version="5.0.1" />
-    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.1" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="PwnedPasswords.Validator" Version="1.2.0" />
-    <PackageReference Include="Serilog" Version="4.2.0" />
     <PackageReference Include="Serilog.AspNetCore" Version="3.4.0" />
     <PackageReference Include="Serilog.Settings.Configuration" Version="3.1.0" />
     <PackageReference Include="Serilog.Sinks.Seq" Version="4.0.0" />
     <PackageReference Include="System.Net.Http.Json" Version="5.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Remove="..\.dockerignore" />
   </ItemGroup>
 
 </Project>
